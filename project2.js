@@ -15,11 +15,11 @@ function play(userChoice) {
              (userChoice === 'scissors' && computerChoice === 'paper')) {
     wins++;
     updateScore();
-    alert("You won!");
+    alert("You win!");
   } else {
     losses++;
     updateScore();
-    alert("You lost!");
+    alert("Computer wins!");
   }
 }
 
