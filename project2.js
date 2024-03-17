@@ -5,21 +5,22 @@ let losses = 0;
 function play(userChoice) {
   const choices = ['rock', 'paper', 'scissors'];
   const computerChoice = choices[Math.floor(Math.random() * 3)];
+  const resultDisplay = document.getElementById('result');
 
   if (userChoice === computerChoice) {
     ties++;
     updateScore();
-    alert("It's a tie!");
+    resultDisplay.textContent = "It's a tie!";
   } else if ((userChoice === 'rock' && computerChoice === 'scissors') ||
              (userChoice === 'paper' && computerChoice === 'rock') ||
              (userChoice === 'scissors' && computerChoice === 'paper')) {
     wins++;
     updateScore();
-    alert("You win!");
+    resultDisplay.textContent = "You win!";
   } else {
     losses++;
     updateScore();
-    alert("Computer wins!");
+    resultDisplay.textContent = `You lost! You chose ${userChoice} and computer chose ${computerChoice}.`;
   }
 }
 
@@ -28,3 +29,5 @@ function updateScore() {
   document.getElementById('ties').textContent = ties;
   document.getElementById('losses').textContent = losses;
 }
+
+
