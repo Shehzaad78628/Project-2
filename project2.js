@@ -16,11 +16,11 @@ function play(userChoice) {
              (userChoice === 'scissors' && computerChoice === 'paper')) {
     wins++;
     updateScore();
-    resultDisplay.textContent = "You win!";
+    resultDisplay.textContent = `You win! You chose ${userChoice} and computer chose ${computerChoice}.` ;
   } else {
     losses++;
     updateScore();
-    resultDisplay.textContent = `You lost! You chose ${userChoice} and computer chose ${computerChoice}.`;
+    resultDisplay.textContent = `You lost! The computer chose ${computerChoice} and you chose ${userChoice}.`;
   }
 }
 
